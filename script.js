@@ -9,8 +9,7 @@ function getRandomInt(max) {
 
 //   function to make the script take an random number
 function getComputerChoice() {
-    let beholder = getRandomInt(3)
-    let result = ''
+    let beholder = getRandomInt(3), result = ''
 
     switch (beholder) {
         case 0:
@@ -31,17 +30,27 @@ function getComputerChoice() {
     return result   
 }
 
-function getUserChoice(){
-    let result = 'PAPER'
-    return result
+// function to get the user choice 
+function getUserChoice(choice){
+    let result = `${choice}`
+    return result.toUpperCase()
 }
 
 function jogo(){
-    let pc = getComputerChoice(), user =  getUserChoice()
+
+    let pc = getComputerChoice(), user =  getUserChoice('rocK')
    
-    if((pc == 'ROCK' && user != 'PAPER') || (pc == 'PAPER' && user != 'SCISSORS') || (pc == 'SCISSORS' && user != 'ROCk')){
-        console.log('COMPUTADOR GANHOU')
+    if((pc == 'ROCK' && user == 'ROCK') 
+    || (pc == 'PAPER' && user == 'PAPER') 
+    || (pc == 'SCISSORS' && user == 'SCISSORS')){
+        // action
+        console.log('TIE')
         
+    } else if ((pc == 'ROCK' && user != 'PAPER') 
+        || (pc == 'PAPER' && user != 'SCISSORS')
+        || (pc == 'SCISSORS' && user != 'ROCK')){
+                // action
+                console.log('PC WINS')
     } else console.log('USER GANHOU')
 }
 jogo()
