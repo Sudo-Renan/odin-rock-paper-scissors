@@ -31,6 +31,7 @@ function getComputerChoice() {
 }
 
 // function to get the user choice 
+// set an input value later
 function getUserChoice(choice){
     let result = `${choice}`
     return result.toUpperCase()
