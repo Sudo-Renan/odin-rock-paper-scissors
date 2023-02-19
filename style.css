@@ -2,6 +2,9 @@
 #container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
 }
 
 /* container of the result and option boxes */
@@ -10,7 +13,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
+    align-self: center;
     width: 80vw;
 }
 
@@ -41,9 +44,10 @@
     color: aliceblue;
 }
 
-/* config of the options of choice */
+/* config of the options of choice 
+the images and the rotation*/
 .rock-user {
-    background-image: url(img/rock.webp);
+    background-image: url(img/rock.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -51,16 +55,15 @@
 }
 
 .paper-user {
-    background-image: url(img/paper.webp);
+    background-image: url(img/paper.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
     transform: rotate(70deg);
-
 }
 
 .scissors-user {
-    background-image: url(img/scissors.webp);
+    background-image: url(img/scissors.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -68,10 +71,29 @@
     
 }
 
+/* setting the animations */
+@keyframes mouseH1 {
+    from {
+        transform: rotate(70deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.rock-user:hover, .paper-user:hover, .scissors-user:hover{
+    animation-duration: 1s;
+    animation-name: mouseH1;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
 /* configure the computer options 
 basically just fliping the images */
 .rock-pc{
-    background-image: url(img/rock-flip.webp);
+    background-image: url(img/rock-flip.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -79,7 +101,7 @@ basically just fliping the images */
 }
 
 .paper-pc {
-    background-image: url(img/paper-flip.webp);
+    background-image: url(img/paper-flip.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -87,9 +109,40 @@ basically just fliping the images */
 }
 
 .scissors-pc{
-    background-image: url(img/scissors-flip.webp);
+    background-image: url(img/scissors-flip.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
     transform: rotate(270deg);
+}
+
+/* general config to the pc selection */
+.pc-selected{
+    background-color: rgb(242, 255, 129);
+    border: 5px solid black;
+    border-radius: 5%;    
+}
+
+.choice {
+    width: fit-content;
+}
+
+/* To the next update create one img specific 
+and change the color when the user click */
+.selected{
+    background-color: aqua;
+}
+
+/* config the footer */
+footer{
+    width: 100%;
+    position: fixed;
+    margin-top: 103vh;
+    background-color: beige;
+    align-self: center;
+    text-align: center;
+}
+
+p {
+    align-self: center;
 }

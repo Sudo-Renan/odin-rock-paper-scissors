@@ -1,8 +1,12 @@
-// global variables, soon will be used
+// global variables
 let rock = document.querySelector('.rock-user'), 
 paper = document.querySelector('.paper-user'), 
-scissor = document.querySelector('.scissors-user'),
+scissor = document.querySelector('.scissors-user')
 resp = document.querySelector('.result');
+
+let rockPC = document.querySelector('.rock-pc'),
+paperPC = document.querySelector('.paper-pc'),
+scissorsPC = document.querySelector('.scissors-pc');
 
 
 // function to return an random number
@@ -51,6 +55,8 @@ function jogo(a){
 
     let pc = getComputerChoice()
     // let user =  getUserChoice('rocK')
+
+
    
     if((pc == 'ROCK' && a == 'ROCK') 
     || (pc == 'PAPER' && a == 'PAPER') 
@@ -66,6 +72,16 @@ function jogo(a){
         console.log('PC WINS')
         resp.innerHTML = `PC WINS`
     } else {console.log('USER WINS'); resp.innerHTML = `USER WINS`}
+
+    // config the style of the pc choices
+    pc == 'ROCK' ? rockPC.classList.add('pc-selected') : rockPC.classList.remove('pc-selected');
+    pc == 'PAPER' ? paperPC.classList.add('pc-selected') : paperPC.classList.remove('pc-selected');
+    pc == 'SCISSORS' ? scissorsPC.classList.add('pc-selected') : scissorsPC.classList.remove('pc-selected');
+
+    // config the style of the user choices
+    a == 'ROCK' ? rock.classList.add('selected') : rock.classList.remove('selected');
+    a == 'PAPER' ? paper.classList.add('selected') : paper.classList.remove('selected');
+    a == 'SCISSORS' ? scissor.classList.add('selected') : scissor.classList.remove('selected');
 }
 // jogo()
 
