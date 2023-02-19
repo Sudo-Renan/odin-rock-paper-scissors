@@ -1,5 +1,7 @@
 // global variables, soon will be used
-let rock = 0, paper = 1, scissor = 2;
+let rock = document.querySelector('.rock'), 
+paper = document.querySelector('.paper'), 
+scissor = document.querySelector('.scissors');
 
 
 // function to return an random number
@@ -31,27 +33,58 @@ function getComputerChoice() {
 }
 
 // function to get the user choice 
-// set an input value later
+/* 
+This would work fine in other circunstances
+but how the addeventlistener dont permisse 
+the use of functions with parameters has a second parameter
+the first ideia is useless.
+
 function getUserChoice(choice){
     let result = `${choice}`
+    console.log(choice)
+
     return result.toUpperCase()
 }
+*/
 
-function jogo(){
+function jogo(a){
 
-    let pc = getComputerChoice(), user =  getUserChoice('rocK')
+    let pc = getComputerChoice()
+    // let user =  getUserChoice('rocK')
    
-    if((pc == 'ROCK' && user == 'ROCK') 
-    || (pc == 'PAPER' && user == 'PAPER') 
-    || (pc == 'SCISSORS' && user == 'SCISSORS')){
+    if((pc == 'ROCK' && a == 'ROCK') 
+    || (pc == 'PAPER' && a == 'PAPER') 
+    || (pc == 'SCISSORS' && a == 'SCISSORS')){
         // action
         console.log('TIE')
-        
-    } else if ((pc == 'ROCK' && user != 'PAPER') 
-        || (pc == 'PAPER' && user != 'SCISSORS')
-        || (pc == 'SCISSORS' && user != 'ROCK')){
+
+    } else if ((pc == 'ROCK' && a != 'PAPER') 
+        || (pc == 'PAPER' && a != 'SCISSORS')
+        || (pc == 'SCISSORS' && a != 'ROCK')){
                 // action
-                console.log('PC WINS')
-    } else console.log('USER GANHOU')
+        console.log('PC WINS')
+    } else {console.log('USER GANHOU')}
 }
-jogo()
+// jogo()
+
+// configure the user choices
+rock.addEventListener('click', () => {
+    let a = `ROCK`
+    console.log(a)
+    // a.toUpperCase()
+    return jogo(a)
+})
+
+paper.addEventListener('click', () => {
+    let a = `PAPER`
+    console.log(a)
+    // a.toUpperCase()
+    return jogo(a)
+})
+
+scissor.addEventListener('click', () => {
+    let a = `SCISSORS`
+    console.log(a)
+    // a.toUpperCase()
+    return jogo(a)
+})
