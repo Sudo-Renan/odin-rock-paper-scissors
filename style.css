@@ -1,8 +1,10 @@
+/* main config to center everything on the site */
 #container {
     display: flex;
     justify-content: center;
 }
 
+/* container of the result and option boxes */
 .container{
     display: flex;
     flex-direction: row;
@@ -19,18 +21,75 @@
 }
 
 .user figure, .pc figure {
-    width: 100px;
-    height: 100px;
-    background-color: black;
+    width: 180px;
+    height: 180px;
+    /* background-color: black; */
 }
 
 .pc{
     align-items: flex-end;
 }
 
-
-.result {
-    background-color: gray;
-    width: 50px;
+/* style of the result box */
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
     height: 50px;
+    background-color: gray;
+    color: aliceblue;
+}
+
+/* config of the options of choice */
+.rock-user {
+    background-image: url(img/rock.webp);
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: contain;
+    transform: rotate(70deg);
+}
+
+.paper-user {
+    background-image: url(img/paper.webp);
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: contain;
+    transform: rotate(70deg);
+
+}
+
+.scissors-user {
+    background-image: url(img/scissors.webp);
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: contain;
+    transform: rotate(70deg);
+    
+}
+
+/* configure the computer options 
+basically just fliping the images */
+.rock-pc{
+    background-image: url(img/rock-flip.webp);
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: contain;
+    transform: rotate(270deg);
+}
+
+.paper-pc {
+    background-image: url(img/paper-flip.webp);
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: contain;
+    transform: rotate(270deg);
+}
+
+.scissors-pc{
+    background-image: url(img/scissors-flip.webp);
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: contain;
+    transform: rotate(270deg);
 }

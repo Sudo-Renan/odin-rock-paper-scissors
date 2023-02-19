@@ -1,7 +1,8 @@
 // global variables, soon will be used
-let rock = document.querySelector('.rock'), 
-paper = document.querySelector('.paper'), 
-scissor = document.querySelector('.scissors');
+let rock = document.querySelector('.rock-user'), 
+paper = document.querySelector('.paper-user'), 
+scissor = document.querySelector('.scissors-user'),
+resp = document.querySelector('.result');
 
 
 // function to return an random number
@@ -32,7 +33,6 @@ function getComputerChoice() {
     return result   
 }
 
-// function to get the user choice 
 /* 
 This would work fine in other circunstances
 but how the addeventlistener dont permisse 
@@ -57,17 +57,19 @@ function jogo(a){
     || (pc == 'SCISSORS' && a == 'SCISSORS')){
         // action
         console.log('TIE')
+        resp.innerHTML = `TIE`
 
     } else if ((pc == 'ROCK' && a != 'PAPER') 
         || (pc == 'PAPER' && a != 'SCISSORS')
         || (pc == 'SCISSORS' && a != 'ROCK')){
                 // action
         console.log('PC WINS')
-    } else {console.log('USER GANHOU')}
+        resp.innerHTML = `PC WINS`
+    } else {console.log('USER WINS'); resp.innerHTML = `USER WINS`}
 }
 // jogo()
 
-// configure the user choices
+// configure the user choices and show the results
 rock.addEventListener('click', () => {
     let a = `ROCK`
     console.log(a)
