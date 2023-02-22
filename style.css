@@ -1,3 +1,6 @@
+body{
+    background-color: antiquewhite;
+}
 /* main config to center everything on the site */
 #container {
     display: flex;
@@ -24,8 +27,8 @@
 }
 
 .user figure, .pc figure {
-    width: 180px;
-    height: 180px;
+    width: 230px;
+    height: 230px;
     /* background-color: black; */
 }
 
@@ -38,37 +41,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 50px;
     height: 50px;
-    background-color: gray;
-    color: aliceblue;
+    background-color: rgb(56, 53, 53);
+    border: 8px solid rgb(56, 53, 53);
+    border-radius: 40%;
+    color: rgb(214, 208, 208);
+    font-family: 'Comic Sans';
+    font-size: larger;
+    font-weight: 700;
 }
 
 /* config of the options of choice 
 the images and the rotation*/
 .rock-user {
-    background-image: url(img/rock.gif);
+    background-image: url(img/closed.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
     transform: rotate(70deg);
+}
+
+.rock-user:hover{
+    background-image: url(img/rock.gif);
 }
 
 .paper-user {
-    background-image: url(img/paper.gif);
+    background-image: url(img/closed.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
     transform: rotate(70deg);
 }
 
+.paper-user:hover{
+    background-image: url(img/paper.gif);
+}
+
 .scissors-user {
-    background-image: url(img/scissors.gif);
+    background-image: url(img/closed.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
     transform: rotate(70deg);
     
+}
+
+.scissors-user:hover {
+    background-image: url(img/scissors.gif);
 }
 
 /* setting the animations */
@@ -93,7 +113,7 @@ the images and the rotation*/
 /* configure the computer options 
 basically just fliping the images */
 .rock-pc{
-    background-image: url(img/rock-flip.gif);
+    background-image: url(img/closed-pc.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -101,7 +121,7 @@ basically just fliping the images */
 }
 
 .paper-pc {
-    background-image: url(img/paper-flip.gif);
+    background-image: url(img/closed-pc.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -109,7 +129,7 @@ basically just fliping the images */
 }
 
 .scissors-pc{
-    background-image: url(img/scissors-flip.gif);
+    background-image: url(img/closed-pc.gif);
     background-repeat: no-repeat;
     z-index: 99;
     background-size: contain;
@@ -123,22 +143,31 @@ basically just fliping the images */
     border-radius: 5%;    
 }
 
+/* change the color of each choice in js */
+.rock-selected{
+    background-image: url(img/rock-color-pc.gif);
+}
+.paper-selected{
+    background-image: url(img/paper-color-pc.gif);
+}
+.scissors-selected{
+    background-image: url(img/scissors-color-pc.gif);
+}
+
+
 .choice {
     width: fit-content;
 }
-
-/* To the next update create one img specific 
-and change the color when the user click */
-.selected{
-    background-color: aqua;
-}
-
+ 
 /* config the footer */
 footer{
-    width: 100%;
+    width: 101vw;
+    z-index: 999;
     position: fixed;
-    margin-top: 103vh;
-    background-color: beige;
+    margin-top: 4vh;
+    margin-left: -1vw;
+
+    /* background-color: rgb(53, 53, 2); */
     align-self: center;
     text-align: center;
 }
